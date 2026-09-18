@@ -7,7 +7,7 @@
 
 # Команда
 Башкурова Владислава (@bashvivi) -  Тимлид, Системный аналитик, Database Engineer
-Валинкин Андрей (@) -  Backend-разработчик, DevOps
+Валинкин Андрей (@KentBLACK) -  Backend-разработчик, DevOps
 Рябова Анастасия (@) - Project Manager, Дизайнер, Frontend-разработчик
 
 # Технологический стек
@@ -19,8 +19,8 @@ Database: PostgreSQL
 
 # Ссылки
 Figma-макеты - 
-Backend репозиторий -
-Frontend репозиторий - 
+Backend репозиторий - https://github.com/CoGoal/Backend
+Frontend репозиторий - https://github.com/CoGoal/Frontend
 Kanban-доска - 
 
 # Структура документации
