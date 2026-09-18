@@ -2,8 +2,7 @@
 
 # О проекте
 Сервис взаимной подотчётности для достижения целей. 
-Помогает несамоорганизованным людям выполнять планы 
-через систему пактов, залогов и геймификации.
+Помогает несамоорганизованным людям выполнять планы через систему пактов, залогов и геймификации.
 
 # Команда
 Башкурова Владислава (@bashvivi) -  Тимлид, Системный аналитик, Database Engineer
@@ -21,7 +20,7 @@ Database: PostgreSQL
 Figma-макеты - 
 Backend репозиторий - https://github.com/CoGoal/Backend
 Frontend репозиторий - https://github.com/CoGoal/Frontend
-Kanban-доска - 
+Kanban-доска - https://github.com/orgs/CoGoal/projects/2/views/1
 
 # Структура документации
 Контекст приложения - project-documentation/01-context.md
