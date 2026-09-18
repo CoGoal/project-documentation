@@ -1,4 +1,4 @@
-# Проектная документация - Skill pact
+# Проектная документация CoGoal
 
 # О проекте
 Сервис взаимной подотчётности для достижения целей. 
@@ -7,7 +7,7 @@
 # Команда
 Башкурова Владислава (@bashvivi) -  Тимлид, Системный аналитик, Database Engineer
 Валинкин Андрей (@KentBLACK) -  Backend-разработчик, DevOps
-Рябова Анастасия (@) - Project Manager, Дизайнер, Frontend-разработчик
+Рябова Анастасия (@StacyRy) - Project Manager, Дизайнер, Frontend-разработчик
 
 # Технологический стек
 Backend: Java, Spring Boot
@@ -28,3 +28,4 @@ User Stories - project-documentation/02-user-stories.md
 Roadmap - project-documentation//03-roadmap.md
 API-контракты - project-documentation//04-api-contracts.md
 ERD-диаграмма - project-documentation/05-erd/erd-diagram.md
+Протоколы встреч - project-documentation/07-meeting-notes.md
