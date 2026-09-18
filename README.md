@@ -4,32 +4,35 @@
 Сервис взаимной подотчётности для достижения целей. 
 
 Сервис подразумевает под собой помощь не самоорганизованным людям выполнять поставленные планы через систему пактов, залогов и геймификации. Пользователь регистрируется на сайте, чтобы создать свою цель, указывая название, категорию цели (спорт/учёба/работа и тд), дедлайн и устанавливает цену залога, который в случае невыполнения цели, списывается с карты и отправляется в благотворительные фонды на выбор пользователя. Также пользователь может разбить свою цель на несколько этапов и указать промежуточные задачи и дедлайны.
+
 После создания цели, она публикуется на сайте, где зарегистрированные пользователи с активной целью могут заключить пакт(поддерживается пакт между группой людей). Также предусмотрена возможность приглашать пользователей для создания с ними пакта.
+
 Перед каждым уставленным в анкете дедлайном пользователи должны отчитываться о проделанной работе и прикладывать доказательство (н-р, файл, ссылку, фотографию). Напарник либо подтверждает выполненное задание, либо отвергает с указанным комментарием.
+
 Если дедлайн будет просрочен, то удерживаемый залог отправляют в фонд, если всё выполнено во время, то начисляются баллы, которые можно потратить в магазине для кастомизации профиля.
 
 # Команда
-Башкурова Владислава (@bashvivi) -  Тимлид, Системный аналитик, Database Engineer
-Валинкин Андрей (@KentBLACK) -  Backend-разработчик, DevOps
-Рябова Анастасия (@StacyRy) - Project Manager, Дизайнер, Frontend-разработчик
+- Башкурова Владислава (@bashvivi) -  Тимлид, Системный аналитик, Database Engineer
+- Валинкин Андрей (@KentBLACK) -  Backend-разработчик, DevOps
+- Рябова Анастасия (@StacyRy) - Project Manager, Дизайнер, Frontend-разработчик
 
 # Технологический стек
-Backend: Java, Spring Boot
-Frontend: React (Vite)
-Database: PostgreSQL
-Дизайн: Figma
-Документация: Markdown, Mermaid, Draw.io
+- Backend: Java, Spring Boot
+- Frontend: React (Vite)
+- Database: PostgreSQL
+- Дизайн: Figma
+- Документация: Markdown, Mermaid, Draw.io
 
 # Ссылки
-Figma-макеты - 
-Backend репозиторий - https://github.com/CoGoal/Backend
-Frontend репозиторий - https://github.com/CoGoal/Frontend
-Kanban-доска - https://github.com/orgs/CoGoal/projects/2/views/1
+- Figma-макеты - 
+- Backend репозиторий - https://github.com/CoGoal/Backend
+- Frontend репозиторий - https://github.com/CoGoal/Frontend
+- Kanban-доска - https://github.com/orgs/CoGoal/projects/2/views/1
 
 # Структура документации
-Контекст приложения - project-documentation/01-context.md
-User Stories - project-documentation/02-user-stories.md
-Roadmap - project-documentation//03-roadmap.md
-API-контракты - project-documentation//04-api-contracts.md
-ERD-диаграмма - project-documentation/05-erd/erd-diagram.md
-Протоколы встреч - project-documentation/07-meeting-notes.md
+- Контекст приложения - project-documentation/01-context.md
+- User Stories - project-documentation/02-user-stories.md
+- Roadmap - project-documentation//03-roadmap.md
+- API-контракты - project-documentation//04-api-contracts.md
+- ERD-диаграмма - project-documentation/05-erd/erd-diagram.md
+- Протоколы встреч - project-documentation/07-meeting-notes.md
