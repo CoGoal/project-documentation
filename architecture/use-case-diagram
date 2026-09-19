@@ -1,112 +1,102 @@
-#  Диаграмма прецедентов (Use Case Diagram)
+# Диаграмма прецедентов (Use Case Diagram)
 
-Диаграмма показывает взаимодействие актёров (пользователей) с системой и все доступные сценарии использования.
+```mermaid
+graph LR
+    %% Стилизация
+    classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef system fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef usecase fill:#fff,stroke:#333,stroke-width:1px,rx:10,ry:10;
 
-## Диаграмма
+    %% Актёры
+    Guest["Гость"]:::actor
+    User["Пользователь"]:::actor
+    Participant["Участник пакта"]:::actor
+    Support["Техподдержка"]:::actor
+    System[" Система"]:::actor
 
-![Use Case Diagram](https://img.plantuml.biz/plantuml/svg/bLPRInj157uFv3yCliTc9nUJ8Y9Ow6j1VElB4jUuc6n2TeE8BNZfbHOijKyMj5PeNxSRKxU9hdzXzY_qb_IScTdDRh8JhANYdCjtRj-SsLNRqNjElztAvnpJQHbampR8cWw_dfXwiwUtoT-3BuHTCZyy38_OaDqobuHlu8yn_Fz3c4_OFNFP29G1y_AvVAvbR3d4wP2UsTnsoARPCngEsR7oENl7jBewOdRrnexUDDQTFOY8UjrgjeoaXTvmEZsXrtSDkzDEQUrjVREpQrfDigMtR0EZSWUom4vPW9c67nU8RfEdVSDs9ieBo74SVcGtc2jpUK5ZQGg5zoQML-5Rq6F9TyndeqcHBZT-1aqp6sPNjnBetzamV0s60Rk6VyFmWFrc8-cmtkzsExs4SQgZmcJFTemsreAfaEKNXK8wJZuNjseMO1_r17vaRy7Y4_DmAf273nMxC3K_F14J0raGlW8vhtvVUE9FtpOQEFs5ZVL2KNjkiMyGO212WPC44GrRAseAHmgEdw4Nq8d8b2fCIs1waKv7E9GK3cN4vaF6wbsO3yuIsOYJ6e8MHeM001OdMXPWBsURz8DJsLSteGA8bu1s0pDrHOpe0lWHV4NXMvKDl9RayNbUdXAdgi1P0fmhZXBNEUExfF2jWU-PvFf0ii5FNE78lwPiqON8FloWRb8TWdp5r70a6U3rR3-j27xdu3F2Il2QtSNkCHEqei9PovZCr3q5RmL7DIg9vqFI9pWRy7u4ia2c4m3YC4RbXWCGk-4x8Ox9fIcehKseVGXtDC0Bb96VWkTQcND7xA20xvAXiiQo0WEvAxS0RW1W7cobg81C90MJjMfKYy30lKQWxG7-mPUBNAKyNM-2fs2qXem-XLoE8OLxZXhWQoBpYRmLdDPg_vaDc7k43U9umoX0JH40-OoFHRH0WPQuEf4RI0Niv8Z3Fg052kxJOc8uzsaYFWYO5fKtzWoSRzajLCjVhydQLjnVYbVf9qQQfGHLN21A-LBo-7h3SEEfUq6fCZ_bIwdA3w_IEVl5Nw3tYLNlaMcKy3WAhxXOL3uWq5cFunqHQEm1bY4Q7FbFtWnU0V-K88N2YdpuKcSwTIx7pxWKbDB7IlfOJH-NqiTQ-bXF7N4x9ezQ-aZJntGQMZeG3YoVItnoH6RbJ6arKrhBbDQpfCYi36a9in0VGv5xPKg0r0UH-APA-4r9n1IWHMHnKHH87fFbPTDgjFgRnieALshpb7IUiZ9FMPsZfFCIegLvoh9IcS-j6jOcVCd_0m00)
+    User --- Participant
 
-## Исходный код PlantUML
+    subgraph Система ["🖥️ Система CoGoal"]
+        direction TB
+        
+        subgraph Auth ["Авторизация и профиль"]
+            UC01("US-01: Регистрация"):::usecase
+            UC02("US-02: Вход"):::usecase
+            UC03("US-03: Профиль"):::usecase
+            UC04("US-04: Восстановление пароля"):::usecase
+        end
 
-<details>
-<summary>Нажмите, чтобы увидеть код диаграммы</summary>
+        subgraph Goals ["Цели"]
+            UC05("US-05: Создание цели"):::usecase
+            UC06("US-06: Редактирование цели"):::usecase
+            UC07("US-07: Удаление цели"):::usecase
+            UC08("US-08: Категории целей"):::usecase
+        end
 
-```plantuml
-@startuml
-title Use Case Diagram — Система целей и пактов
+        subgraph Pacts ["Пакты"]
+            UC09("US-09: Лента целей"):::usecase
+            UC10("US-10: Отклик на цель"):::usecase
+            UC11("US-11: Создание пакта"):::usecase
+            UC12("US-12: Принятие/отклонение"):::usecase
+            UC13("US-13: Просмотр пакта"):::usecase
+            UC14("US-14: Расторжение пакта"):::usecase
+            UC15("US-15: Автозавершение пакта"):::usecase
+            UC16("US-16: Проверка доказательства"):::usecase
+            UC17("US-17: Групповой пакт"):::usecase
+            UC18("US-18: Проверка в группе"):::usecase
+            UC19("US-19: Повторная отправка"):::usecase
+            UC20("US-20: Автопринятие доказательства"):::usecase
+        end
 
-left to right direction
-skinparam packageStyle rectangle
-skinparam actorStyle awesome
-skinparam shadowing false
+        subgraph Comm ["Коммуникация"]
+            UC21("US-21: Чат пакта"):::usecase
+            UC22("US-22: Уведомления"):::usecase
+        end
 
-actor "Гость" as Guest
-actor "Пользователь" as User
-actor "Участник пакта" as Participant
-actor "Техподдержка" as Support
-actor "Система" as System
+        subgraph SupportSys ["Техподдержка"]
+            UC23("US-23: Обращение в поддержку"):::usecase
+            UC24("US-24: Возврат средств"):::usecase
+        end
+    end
 
-User <|-- Participant
+    %% Связи актёров с функциями
+    Guest --> UC01
+    Guest --> UC02
+    Guest --> UC04
 
-rectangle "Система" {
+    User --> UC03
+    User --> UC05
+    User --> UC06
+    User --> UC07
+    User --> UC08
+    User --> UC09
+    User --> UC10
+    User --> UC11
+    User --> UC12
+    User --> UC13
+    User --> UC17
+    User --> UC22
 
-    package "Авторизация и профиль" {
-        usecase "US-01\nРегистрация" as UC01
-        usecase "US-02\nВход" as UC02
-        usecase "US-03\nПрофиль" as UC03
-        usecase "US-04\nВосстановление\nпароля" as UC04
-    }
+    Participant --> UC14
+    Participant --> UC16
+    Participant --> UC18
+    Participant --> UC19
+    Participant --> UC21
+    Participant --> UC23
 
-    package "Цели" {
-        usecase "US-05\nСоздание цели" as UC05
-        usecase "US-06\nРедактирование цели" as UC06
-        usecase "US-07\nУдаление цели" as UC07
-        usecase "US-08\nКатегории целей" as UC08
-    }
+    System --> UC15
+    System --> UC20
 
-    package "Пакты" {
-        usecase "US-09\nЛента целей" as UC09
-        usecase "US-10\nОтклик на цель" as UC10
-        usecase "US-11\nСоздание пакта" as UC11
-        usecase "US-12\nПринятие /\nотклонение приглашения" as UC12
-        usecase "US-13\nПросмотр пакта" as UC13
-        usecase "US-14\nРасторжение пакта" as UC14
-        usecase "US-15\nАвтозавершение пакта" as UC15
-        usecase "US-16\nПроверка доказательства" as UC16
-        usecase "US-17\nГрупповой пакт" as UC17
-        usecase "US-18\nПроверка доказательства\nв группе" as UC18
-        usecase "US-19\nПовторная отправка\nдоказательства" as UC19
-        usecase "US-20\nАвтопринятие\nдоказательства" as UC20
-    }
+    Support --> UC23
+    Support --> UC24
 
-    package "Коммуникация" {
-        usecase "US-21\nЧат пакта" as UC21
-        usecase "US-22\nУведомления" as UC22
-    }
-
-    package "Техподдержка" {
-        usecase "US-23\nОбращение\nв поддержку" as UC23
-        usecase "US-24\nВозврат средств" as UC24
-    }
-}
-
-Guest --> UC01
-Guest --> UC02
-Guest --> UC04
-
-User --> UC03
-User --> UC05
-User --> UC06
-User --> UC07
-User --> UC08
-User --> UC09
-User --> UC10
-User --> UC11
-User --> UC12
-User --> UC13
-User --> UC17
-User --> UC22
-
-Participant --> UC14
-Participant --> UC16
-Participant --> UC18
-Participant --> UC19
-Participant --> UC21
-Participant --> UC23
-
-System --> UC15
-System --> UC20
-
-Support --> UC23
-Support --> UC24
-
-UC10 ..> UC22 : <<include>>
-UC11 ..> UC22 : <<include>>
-UC12 ..> UC22 : <<include>>
-UC15 ..> UC22 : <<include>>
-UC16 ..> UC22 : <<include>>
-UC20 ..> UC22 : <<include>>
-UC23 ..> UC22 : <<include>>
-UC24 ..> UC22 : <<include>>
-
-@enduml
+    %% Include связи
+    UC10 -.->|include| UC22
+    UC11 -.->|include| UC22
+    UC12 -.->|include| UC22
+    UC15 -.->|include| UC22
+    UC16 -.->|include| UC22
+    UC20 -.->|include| UC22
+    UC23 -.->|include| UC22
+    UC24 -.->|include| UC22
+```
