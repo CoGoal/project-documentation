@@ -1,3 +1,4 @@
 # Архитектурная схема
 
-![Architectural scheme]( https://web.telegram.org/28510509-7fe6-459f-8d5e-f7f7b7ac763b )
+![Architectural scheme]( <img width="831" height="613" alt="image" src="https://github.com/user-attachments/assets/1cc172cc-abcd-4bb5-9e30-ca3d6d8a12ff" />
+ )
