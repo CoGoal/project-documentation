@@ -1,1 +1,98 @@
+@startuml
+title Use Case Diagram — Система целей и пактов
 
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam shadowing false
+
+actor "Гость" as Guest
+actor "Пользователь" as User
+actor "Участник пакта" as Participant
+actor "Техподдержка" as Support
+actor "Система" as System
+
+User <|-- Participant
+
+rectangle "Система" {
+
+    package "Авторизация и профиль" {
+        usecase "US-01\nРегистрация" as UC01
+        usecase "US-02\nВход" as UC02
+        usecase "US-03\nПрофиль" as UC03
+        usecase "US-04\nВосстановление\nпароля" as UC04
+    }
+
+    package "Цели" {
+        usecase "US-05\nСоздание цели" as UC05
+        usecase "US-06\nРедактирование цели" as UC06
+        usecase "US-07\nУдаление цели" as UC07
+        usecase "US-08\nКатегории целей" as UC08
+    }
+
+    package "Пакты" {
+        usecase "US-09\nЛента целей" as UC09
+        usecase "US-10\nОтклик на цель" as UC10
+        usecase "US-11\nСоздание пакта" as UC11
+        usecase "US-12\nПринятие /\nотклонение приглашения" as UC12
+        usecase "US-13\nПросмотр пакта" as UC13
+        usecase "US-14\nРасторжение пакта" as UC14
+        usecase "US-15\nАвтозавершение пакта" as UC15
+        usecase "US-16\nПроверка доказательства" as UC16
+        usecase "US-17\nГрупповой пакт" as UC17
+        usecase "US-18\nПроверка доказательства\nв группе" as UC18
+        usecase "US-19\nПовторная отправка\nдоказательства" as UC19
+        usecase "US-20\nАвтопринятие\nдоказательства" as UC20
+    }
+
+    package "Коммуникация" {
+        usecase "US-21\nЧат пакта" as UC21
+        usecase "US-22\nУведомления" as UC22
+    }
+
+    package "Техподдержка" {
+        usecase "US-23\nОбращение\nв поддержку" as UC23
+        usecase "US-24\nВозврат средств" as UC24
+    }
+}
+
+Guest --> UC01
+Guest --> UC02
+Guest --> UC04
+
+User --> UC03
+User --> UC05
+User --> UC06
+User --> UC07
+User --> UC08
+User --> UC09
+User --> UC10
+User --> UC11
+User --> UC12
+User --> UC13
+User --> UC17
+User --> UC22
+
+Participant --> UC14
+Participant --> UC16
+Participant --> UC18
+Participant --> UC19
+Participant --> UC21
+Participant --> UC23
+
+System --> UC15
+System --> UC20
+
+Support --> UC23
+Support --> UC24
+
+UC10 ..> UC22 : <<include>>
+UC11 ..> UC22 : <<include>>
+UC12 ..> UC22 : <<include>>
+UC15 ..> UC22 : <<include>>
+UC16 ..> UC22 : <<include>>
+UC20 ..> UC22 : <<include>>
+UC23 ..> UC22 : <<include>>
+UC24 ..> UC22 : <<include>>
+
+@enduml
