@@ -30,9 +30,12 @@
 - Kanban-доска - https://github.com/orgs/CoGoal/projects/2/views/1
 
 # Структура документации
+- Архитектурная схема - project-documentation/architecture/architectural-scheme.md
+- Use Case Diagram - project-documentation/architecture/use-case-diagram.md
+- ERD-диаграмма - project-documentation/architecture/erd.md
 - Контекст приложения - project-documentation/01-context.md
 - User Stories - project-documentation/02-user-stories.md
 - Roadmap - project-documentation//03-roadmap.md
 - API-контракты - project-documentation//04-api-contracts.md
-- ERD-диаграмма - project-documentation/05-erd/erd-diagram.md
+- Функциональные и нефункциональные требования к системе - project-documentation/05-requirements.md
 - Протоколы встреч - project-documentation/07-meeting-notes.md
