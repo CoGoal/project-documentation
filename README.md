@@ -35,7 +35,9 @@
 - ERD-диаграмма - project-documentation/architecture/erd.md
 - Контекст приложения - project-documentation/01-context.md
 - User Stories - project-documentation/02-user-stories.md
-- Roadmap - project-documentation//03-roadmap.md
+- Roadmap - project-documentation/03-roadmap.md
 - API-контракты - project-documentation//04-api-contracts.md
 - Функциональные и нефункциональные требования к системе - project-documentation/05-requirements.md
+- Дизайн - architecture/06-design.md
 - Протоколы встреч - project-documentation/07-meeting-notes.md
+- Чекпоинты - architecture/08-checkpoints.md
