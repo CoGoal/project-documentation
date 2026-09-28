@@ -24,7 +24,7 @@
 - Документация: Markdown, Mermaid, Draw.io
 
 # Ссылки
-- Figma-макеты - 
+- Figma-макеты - https://www.figma.com/design/2ynPHyE5DUSpSzDqBrdNqP/Untitled?node-id=0-1&t=XO3qX5UZ4AbLLMP9-1
 - Backend репозиторий - https://github.com/CoGoal/Backend
 - Frontend репозиторий - https://github.com/CoGoal/Frontend
 - Kanban-доска - https://github.com/orgs/CoGoal/projects/2/views/1
