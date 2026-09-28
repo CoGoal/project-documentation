@@ -38,6 +38,6 @@
 - Roadmap - project-documentation/03-roadmap.md
 - API-контракты - project-documentation//04-api-contracts.md
 - Функциональные и нефункциональные требования к системе - project-documentation/05-requirements.md
-- Дизайн - architecture/06-design.md
+- Дизайн -  project-documentation/06-design.md
 - Протоколы встреч - project-documentation/07-meeting-notes.md
-- Чекпоинты - architecture/08-checkpoints.md
+- Чекпоинты -  project-documentation/08-checkpoints.md
