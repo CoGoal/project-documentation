@@ -6,10 +6,10 @@
 [ссылки]
 
 ## 2. ERD
-[ссылка на диаграмму] (./architecture/erd.md)
+[ссылка на диаграмму](./architecture/erd.md )
 
 ## 3. API Contracts
-[ссылка на Swagger/OpenAPI] (./04-api-contracts.md )
+[ссылка на Swagger/OpenAPI](./04-api-contracts.md )
 
 ## 4. Hello World
 Описание:
@@ -19,7 +19,7 @@ React → Spring Boot → JSON response
 [ссылка на frontend]
 
 ## 5. Roadmap
-[ссылка] (./03-roadmap.md)
+[ссылка](./03-roadmap.md)
 
 ## 6. GitHub и командная работа
 - структура репозиториев
