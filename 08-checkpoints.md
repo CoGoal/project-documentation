@@ -9,7 +9,6 @@
 ## 1. Анализ бизнес-требований
 Подготовлены:
 - [описание предметной области;](./01-context.md)
-- [роли пользователей;](./01-context.md)
 - [основные пользовательские сценарии;](./02-user-stories.md)
 - [функциональные требования;](./05-requirements.md)
 - [нефункциональные требования;](./05-requirements.md)
@@ -18,7 +17,7 @@
 
 Разработана принципиальная ERD-диаграмма базы данных проекта.
 
-Количество сущностей: 17.
+Количество сущностей: 20.
 
 [ERD Diagram](./architecture/erd.md )
 
@@ -49,8 +48,8 @@ GET /api/hello
 Frontend выполняет запрос к backend и отображает
 полученный ответ.
 
-[ссылка на backend] 
-[ссылка на frontend]
+[ссылка на backend](https://github.com/CoGoal/Backend/tree/main/CoGoal-main)
+[ссылка на frontend](https://github.com/CoGoal/Frontend)
 
 ## 5. Roadmap
 
