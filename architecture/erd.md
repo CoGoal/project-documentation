@@ -34,6 +34,20 @@
 - description - описание цели
 - deadline - дедлайн цели
 - status - статус цели (ACTIVE, COMPLETED, CANCELLED)
+
+```mermaid
+@startuml GoalStatus
+
+[*] --> ACTIVE : цель создана
+
+ACTIVE --> COMPLETED : финальный отчёт одобрен
+ACTIVE --> CANCELLED : пакт отменён / расторгнут
+
+COMPLETED --> [*]
+CANCELLED --> [*]
+
+@enduml
+```
 - visibility - статус видимости в публичной ленте (PUBLIC, INVITE_PENDING, IN_PACT)
 - created_at - дата и время создания цели
 - updated_at - когда цель последний раз изменялась
@@ -103,6 +117,9 @@
 - amount - сумма депозита
 - currency - валюта
 - status - статус ((PENDING_PAYMENT, PAID, REFUND_PENDING, REFUNDED, CHARITY_TRANSFER_PENDING, TRANSFERRED_TO_CHARITY, FAILED)
+
+![State Diagram]( https://img.plantuml.biz/plantuml/png/VPFDIiD04CVlWRp37bKitZr8WqaqeB6ayL2iX8e5HMt5fdYrBVX1XUARf27HsfZq5MRVo9bDx7Sai6ncTtxpd__k5bjkxS5jtzqojNxVR5sxPRVcjbko94jdM-UiKDXZ9SrK3VF0AIcLOysqsIw304AOG09VCE9TnZjY6e07yNQrmJluzI62CNWCOXeIt1s1nxkyny37HR4NF2gpZ1Sb5KEbEjCyWb310AS-XFm9FeK8ecyyrY-kcisRpVKiNJ6Ej5LQ324Y4PJmLugIb6nhJjDKtyVa19EmBX-aeGdlOt2ys6PVT4PT4CpIz5DJTJ8cilWpQe_uUse6KI8I9DhPgJOmui4OdSLQNVYX1Vu1yHnn_r2n3BlYs9PYbdNDccCBNmBI0TyGPptYsEDl129XItfc4bEVV76SFkPvf67XiCceDUbp9gET8nYcXYoGKezpbHFcBsXfgcEVEDdUrHk7Kxe38N_1tmxsAXhx5vsZS0q8PuEPIzbzmCSWIpdofkkoLAmtBl4n_G80 )
+  
 - provider_payment_id - id платежа в YooKassa
 - created_at - когда залог содан
 - updated_at - когда состояние залог изменилось в последний раз 
