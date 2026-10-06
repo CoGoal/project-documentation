@@ -34,20 +34,8 @@
 - description - описание цели
 - deadline - дедлайн цели
 - status - статус цели (ACTIVE, COMPLETED, CANCELLED)
+![State Diagram]( https://img.plantuml.biz/plantuml/png/LO-x2i9044NxGFvXQY7OMqX2N4I83p3OY4L0kwYWczv4qKAR_4b4nUV6NvZv8sU3HEo6oxc7E_PI1WiPJKDepeEmBmCPBKt3D8QL4LXM7HpNRmq4r82sUC4d7O1YpF6APynGOQRPBwDnjzlkUS8N3TtOu4qZkeMAzdW7p2cX7QMKyCcA78-qOg_wbpWTLtXU8S4t2nu5Jmc-D4ifAgW25pEAESpvEd6yfaIl-KtGBlw3er9OHgPXJsPZ_li3 )
 
-```mermaid
-@startuml GoalStatus
-
-[*] --> ACTIVE : цель создана
-
-ACTIVE --> COMPLETED : финальный отчёт одобрен
-ACTIVE --> CANCELLED : пакт отменён / расторгнут
-
-COMPLETED --> [*]
-CANCELLED --> [*]
-
-@enduml
-```
 - visibility - статус видимости в публичной ленте (PUBLIC, INVITE_PENDING, IN_PACT)
 - created_at - дата и время создания цели
 - updated_at - когда цель последний раз изменялась
@@ -57,6 +45,7 @@ CANCELLED --> [*]
 - goal_id -  уникальный идентификатор цели
 - charity_id -  уникальный идентификатор благотворительного фонда
 - status - статус пакта (FORMING, AWAITING_DEPOSITS, ACTIVE, CANCELLED, COMPLETED)
+![State Diagram]( https://img.plantuml.biz/plantuml/png/TPBDJi9058NtynHtRIJkNHW8LDC4AB6DBjIOHjqf2obxmCIVO3I-ILEeDYqTN-7UD_BCG45YtCtFFT-SS-_K1r5u7mtlRgaNNaL-54R3WL9dEnTKgntGeNVSSRj7j4_ypJ7dCY4Pi-OldcDRxfxtEPCNJdb1NE84HJB2AkESOwKgkK4rJXjkWCrbo-bvlXlu5ehgZ6TSGFSCZ56cj4UiPG94OK1LLIdlCf7f5hJPw3QTTjjf6LZC2LHQHalvOiKhrjwL-cl2Mci6xebZ40dIfIGFyWH3Oq2MKJBaJB1ESGrFXFmn5ffd_n2tVAsBJOzIgaZomIKsQ2ZYQSxXRkd30hnEh-q45Y2FI5B8gx4tHHODMcd3nLkIts_EqGBBHP8I2eGQhIAXGVnPzHh102ICm52r7MvYHekvlYcriM5UmAzGcrUg4rM_wL_Z0_q0 )
 - created_at - создание пакта
 
 ## Таблица PactParticipant - участники пакта
@@ -64,6 +53,7 @@ CANCELLED --> [*]
 - pact_id -  уникальный идентификатор пакта
 - user_id -  уникальный идентификатор пользователя
 - status - статус пользователя в пакте: REQUESTED (откликнулся сам, ждёт подтверждения автора), INVITED (приглашён автором, ждёт ответа), ACTIVE, FAILED (нарушил обязательства), REJECTED, LEFT, COMPLETED
+![State Diagram]( https://img.plantuml.biz/plantuml/png/PL9BJy904BxlhzYZcX0l7em70y4bgK55G2xYeK4F9DeOANSeYOzeGlmdvT7mA2r_OUOV-MqVKF3GJMTdliVCRBvZcszsz-LPLioMNS5_kzL-DIsxPfjsjoF4_T63pENEfN7TCEhgGfv9MdEFvZGXdrp-v5yA9BaqPeT2949QRJ1LTNkdQWagHC4Ic3dEW0VaSv-7all0heH8wJMiKAmR3RLL2dX8_fuiUHGWydQ0LNMfYdjoOLJdosDvSieV4f4N9yVauKHAYAtFNVbDLn07qJH1zMWQuNPXMV4Cy9-FfXKR6Q65MTQAAqGYhUcADrULiehv-1srFlz8q7v7LdpT1put2oaLZ7AiZmJtU80nQKdKZp326IwTc0YZrwfkqpf0Bnu-39KMUfFhQ8ThWB-qmc5MeAnAzMWjA5wo8r7gHbHwyHEzLNQ4s3hN6Bm5aHXBmuWc3JPZIoz4_ibwn8Fy0m00 )
 - message - текст, который автор прикладывает к приглашению (может быть NULL)
 - termination_vote - голос участника за досрочное расторжение пакта по взаимному согласию
 - created_at - момент отклика или приглашения; от него отсчитываются 48 часов на ответ
@@ -75,7 +65,9 @@ CANCELLED --> [*]
 - title - заголовок (название) промежуточного этапа
 - description - описание промежуточного этапа
 - deadline - дедлайн промежуточного этапа
-- status - статус промежуточного этапа (PENDING, IN_PROGRESS, COMPLETED, FAILED)
+- status - статус промежуточного этапа (PENDING, COMPLETED, FAILED). Вычисляется на основе связанных CheckIn: PENDING, пока нет одобренного отчёта; COMPLETED, когда хотя бы один CheckIn по этому этапу получил статус APPROVED или AUTO_APPROVED; FAILED, если дедлайн прошёл, а одобренного отчёта так и не появилось. Сам цикл попыток (отклонили → пересдали → отклонили) живёт внутри CheckIn и не отражается на статусе этапа напрямую
+![state diagram]( https://img.plantuml.biz/plantuml/png/PP3V2y5G5CVVxrzn7b7BkmTPssY5BSOBabWHhhBhtUP9ad_5hoLfyo-S-nyvaoNfTcwTq_VxEJzAdXWinMe-WzfavdfYmTsc68YLnrWdrmD5AO9jr7MpNe42oBqCy8XFa3x6UCCh9H5ZgI0HQrRDhXgEeITo7y_oG3fIOIHtU0Tjx0wd9kzo8C2LuYJN66846TMs6rQRVFakLrkErKyBsHz-MJMhRpYvGue7mU_anoU1OletSfi0_phGY_62SJe2K26K0ViEdE1fP_PfaQQivF8H7UW5 )
+  
 - completed_at - когда закончен этап или NULL (если этап не закончен)
 
 ## Таблица CheckIn - отчёт о выполнении
@@ -85,6 +77,8 @@ CANCELLED --> [*]
 - attempt_number - номер попытки; растёт после каждого REJECTED, максимум 3
 - submitted_at - когда пользователь отправил отчёт
 - status -  статус отчёта (PENDING, APPROVED, REJECTED, AUTO_APPROVED)
+![State Diagram]( https://img.plantuml.biz/plantuml/png/TP6nQi9W58LtmNUuOrjmwr0SYaL3iOC6QxlKKgGLXBOPQjpL9OD3wPlyXeO6O-8hdF-DF3VIO2mb1CBvptVF-MyQ4t_uuK_VtwGv7Zs_jhrRV-XF9zLAjV9mzYYrsgMuJgVLxbnBNP3PXGtibrtadzZQ6Gn298YGAl9hLUpATNlTUwUbN4hR5eRs537MfF7DTqKXHbBcUiwDq-p_np5rpRmi5vA1TsBdGYN3XWzRyDpaKoDiJeyAtVMxJmUjpYzi85ZH-RCV729I_4yiZDwjw7MqavJX8SsVGYRZJfPvHpFmb2hobE96gPHg579flAw-NfuN2s8xjm4xphGShxhSHpH6tWj_u0u0 )
+
 - comment - комментарий пользователя к отчёту
 
 ## Таблица Proof - доказательство
@@ -131,6 +125,7 @@ CANCELLED --> [*]
 - amount - сумма операции
 - currency - валюта
 - status - статус (PENDING, SUCCESS, FAILED)
+![state diagram]( https://img.plantuml.biz/plantuml/png/TP312e9048RlWk-mvoYwTmZ3B8IGm3fL1waEGHdaUZU3w5IlieLIATahpBvHCqi64LsMdM-6Rtx62BYtuU5goGORpm-yAL-iVPTxF0nqJTT6bGchrPgiRpbjs-co1fEnZ4300wxuPd8FDtbYSWi5WaGrH7NiGo5ZUAh92-IG4cOA50W4t74sbP7SqP9IJelSeMbQhekBVgSH8KZGVA4IuGroXkYfIg727BzzdPRTizf_T1GomtW5nYDLdT01lsV4WgALSKY5jz2rj-zJwvenzsTulnS0 )
 - idempotency_key - уникальный ключ идемпотентности; предотвращает создание двух транзакций по одному и тому же запросу при повторной отправке
 - provider_operation_id - уникальный идентификатор операции у платёжного провайдера
 - error_message - сообщение об ошибки, если есть (иначе NULL)
@@ -176,6 +171,7 @@ CANCELLED --> [*]
 - screenshot_url - ссылка на прикреплённый скриншот (может быть NULL)
 - admin_comment - комментарий администратора по итогу рассмотрения (может быть NULL)
 - status - статус обращения (OPEN, IN_PROGRESS, RESOLVED, REJECTED)
+![State Diagram]( https://img.plantuml.biz/plantuml/png/ZT31Qi9040RWUo3li6V15-YX1EmYbc92LdefHSHwABKgPdDlsajxwgl4qX0npVOL_dcZpiGYGJnuMtxcct-P8B6JjKsVvygagzLoRKUFqwUPDNPYqyJtVE-kSw-wtKiLHdgeBXGSDlI2d3vGeCOMXQACmnBVo3bmOffPGOFXE8h3VgoD4Plpq0-RMk4B9NsYueUITTZ0qIkzjMoihtLlfA-E88zXXuehfRtYziQNOdslNRXVOiARs-CbB0fwRpX_nE6N0qVPANxE7wJuK2ICRoR9lpqalXVC5Wzywpy0 )
 - created_at - когда создано
 - updated_at - когда в последний раз было изменение
 
